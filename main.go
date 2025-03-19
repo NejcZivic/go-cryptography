@@ -106,11 +106,8 @@ func main() {
 			draw.Draw(img, bounds, imageR, image.Point{}, draw.Over)
 
 			binary := stringToBinary(text)
-			stamp := fmt.Sprintf("%08s", strconv.FormatInt(int64(len(binary)), 2))
+			stamp := fmt.Sprintf("%16s", strconv.FormatInt(int64(len(binary)), 2))
 			stamp = strings.ReplaceAll(stamp, " ", "0")
-			if len(binary) < 256 {
-				stamp = "00000000" + stamp
-			}
 			binary = stamp + binary
 
 			counter := 0
